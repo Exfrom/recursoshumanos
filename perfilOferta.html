@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de la Oferta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        fieldset {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto; /* Centrar horizontalmente */
+            padding: 5px 10px; /* Ajustar el tamaño del botón */
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perfil de la Oferta</h1>
+    <form>
+        <fieldset>
+            <h3>Seleccione la oferta de su interés:</h3>
+            <select name="select">
+                <option value="value1">Programador Front-End</option>
+                <option value="value2">Programador Back-End</option>
+                <option value="value3">Administrador de Base de Datos</option>
+            </select>
+            
+            <label>Cuantos años y/o meses de experiencia tiene:</label>
+            <input type="text" name="experiencia" required>
+            
+            <label for="contactchoice0">Elige una opción de contacto:</label>
+            <input type="radio" id="contactchoice1" name="contact" value="email" />
+            <label for="contactchoice1">Email</label>
+            <input type="radio" id="contactchoice2" name="contact" value="celular" />
+            <label for="contactchoice2">Celular</label>
+            <input type="radio" id="contactchoice3" name="contact" value="direccionCorrespondencia" />
+            <label for="contactchoice3">Dirección de Correspondencia</label>
+            
+            <label>Fecha de Graduación:</label>
+            <input type="date" name="birthname" id="birthname">
+            
+            <label>En qué ciudad vive:</label>
+            <select name="select">
+                <option value="value1">Bogotá</option>
+                <option value="value2">Medellín</option>
+                <option value="value3">Cartagena</option>
+                <option value="value4">Santa Marta</option>
+            </select>
+            
+            <p>Empleo actual:<br>
+                <input type="radio" name="empleoactual" value="tiempocompleto"> Tiempo completo<br>
+                <input type="radio" name="empleoactual" value="mediodia"> Medio día<br>
+                <input type="radio" name="empleoactual" value="sinempleo"> Sin empleo
+            </p>
+            
+            <label>Tiene disponibilidad para viajar:</label>
+            <select name="select">
+                <option value="value1">Sí</option>
+                <option value="value2">No</option>
+            </select>
+            
+            <p><input type="submit" value="Enviar datos"></p>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
+
+

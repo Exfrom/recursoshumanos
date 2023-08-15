@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Oferta Laboral</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #333;
+        text-align: center;
+    }
+
+    form {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+<body>
+    <h1>Publicar Oferta Laboral</h1>
+    <form action="procesar_publicacion.php" method="post">
+        <label for="titulo">Título de la oferta:</label>
+        <input type="text" id="titulo" name="titulo" required><br><br>
+        
+        <label for="descripcion">Descripción de la oferta:</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
+        <label for="ubicacion">Requisitos:</label>
+        <input type="text" id="requisitos" name="requisitos" required><br><br>
+        <label for="ubicacion">Requerimientos:</label>
+        <input type="text" id="requerimientos" name="requerimientos" required><br><br>
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required><br><br>
+        <label for="salario">Salario:</label>
+        <input type="number" id="salario" name="salario" required><br><br>
+        <label for="tipocontrato">Tipo de Contrato:</label>
+        <input type="text" id="tipocontrato" name="tipocontrato" required><br><br>
+        <label for="contacto">Informacion de Contacto:</label>
+        <input type="text" id="contacto" name="contacto" required><br><br>
+        <label for="modalidad">Modalidad de Trabajo:</label>
+        <input type="text" id="modalidad" name="moda" required><br><br>
+        <button type="submit">Publicar Oferta</button>
+    </form>
+</body>
+</html>
