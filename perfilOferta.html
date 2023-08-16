@@ -66,6 +66,19 @@
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
+        .volver {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        .volver:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -114,8 +127,9 @@
             </select>
             
             <p><input type="submit" value="Enviar datos"></p>
-            <a class="dropdown-item" href="index.html">Volver</a>
+            
         </fieldset>
+        <a class="volver" href="index.html">Volver</a>
     </form>
 </body>
 </html>
