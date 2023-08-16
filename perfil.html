@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfiles y Filtro de Candidatos</title>
+    <title>Perfiles de Candidatos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,94 +46,54 @@
             font-weight: bold;
             color: #007BFF;
         }
-
-        .filtro {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        select, input {
-            padding: 5px;
-            font-size: 16px;
-            margin-right: 10px;
-        }
     </style>
 </head>
 <body>
     <h1>Perfiles de Candidatos</h1>
 
-    <div class="filtro">
-        <label for="experiencia">Experiencia:</label>
-        <select id="experiencia">
-            <option value="todos">Todos</option>
-            <option value="novato">Novato</option>
-            <option value="intermedio">Intermedio</option>
-            <option value="experimentado">Experimentado</option>
-        </select>
-
-        <label for="estudios">Estudios:</label>
-        <select id="estudios">
-            <option value="todos">Todos</option>
-            <option value="tecnico">Tecnico</option>
-            <option value="tecnologo">Tecnologo</option>
-            <option value="universitaria">Universitaria</option>
-        </select>
-
-        <label for="ubicacion">Ubicación:</label>
-        <input type="text" id="ubicacion" placeholder="Ciudad" />
-
-        <button id="btnFiltrar">Filtrar</button>
-    </div>
-
     <div class="perfiles">
         <div class="perfil" data-experiencia="experimentado" data-estudios="universitaria" data-ubicacion="Ciudad Ejemplo">
             <h2>Nombre del Candidato: Juan Manuel Pérez pluralize</h2>
-            <p><span class="etiqueta">Puesto:</span> Desarrollador backend</p>
+            <p><span class="etiqueta">Puesto:</span> Desarrollador Back-End</p>
             <p><span class="etiqueta">Experiencia:</span> Experimentado</p>
             <p><span class="etiqueta">Estudios:</span> Universitaria</p>
             <p><span class="etiqueta">Ubicación:</span> Bogota Colombia</p>
             <h3>Resumen:</h3>
-            <p>Desarrollador web experimentado con habilidades sólidas en HTML, CSS, JavaScript, Python y Java.</p>
+            <p>Desarrollador Back-End experimentado con habilidades sólidas en HTML, CSS, JavaScript, Python y Java.</p>
         </div>
 
-        <div class="perfil" data-experiencia="intermedio" data-estudios="terciaria" data-ubicacion="Otra Ciudad">
+        <div class="perfil" data-experiencia="intermedio" data-estudios="tecnico" data-ubicacion="Otra Ciudad">
             <h2>Nombre del Candidato: María López</h2>
             <p><span class="etiqueta">Puesto:</span> Diseñadora UX/UI</p>
-            <p><span class="etiqueta">Experiencia:</span> Intermedia</p>
-            <p><span class="etiqueta">Estudios:</span> Terciaria</p>
-            <p><span class="etiqueta">Ubicación:</span> Otra Ciudad</p>
+            <p><span class="etiqueta">Experiencia:</span> Novato</p>
+            <p><span class="etiqueta">Estudios:</span> Universitaria</p>
+            <p><span class="etiqueta">Ubicación:</span> Bucaramanga</p>
             <h3>Resumen:</h3>
             <p>Diseñadora con experiencia en creación de interfaces atractivas y funcionales.</p>
         </div>
+        <div class="perfil" data-experiencia="intermedio" data-estudios="tecnico" data-ubicacion="Otra Ciudad">
+            <h2>Nombre del Candidato: Laura Mendez</h2>
+            <p><span class="etiqueta">Puesto:</span> Desarrollador Frond-End</p>
+            <p><span class="etiqueta">Experiencia:</span> Intermedio</p>
+            <p><span class="etiqueta">Estudios:</span> Tecnico</p>
+            <p><span class="etiqueta">Ubicación:</span> Medellin</p>
+            <h3>Resumen:</h3>
+            <p>Desarrolladora Back-End experimentado con habilidades sólidas en Python y Java, Base de Datos Mysql</p>
+        </div>
+        <div class="perfil" data-experiencia="intermedio" data-estudios="tecnico" data-ubicacion="Otra Ciudad">
+            <h2>Nombre del Candidato: Raul Paez Lopez</h2>
+            <p><span class="etiqueta">Puesto:</span> Administrador Base de Datos</p>
+            <p><span class="etiqueta">Experiencia:</span> Experimentado</p>
+            <p><span class="etiqueta">Estudios:</span> Tecnologo</p>
+            <p><span class="etiqueta">Ubicación:</span> Cali</p>
+            <h3>Resumen:</h3>
+            <p>Desarrolladora Back-End experimentado con habilidades sólidas en Python y Java, Base de Datos Mysql</p>
+        </div>
+
 
         <!-- Agregar más perfiles de candidatos aquí -->
 
     </div>
-
-    <script>
-        document.getElementById("btnFiltrar").addEventListener("click", function() {
-            const experienciaSeleccionada = document.getElementById("experiencia").value;
-            const estudiosSeleccionados = document.getElementById("estudios").value;
-            const ubicacionFiltro = document.getElementById("ubicacion").value.toLowerCase();
-            const perfiles = document.querySelectorAll(".perfil");
-            
-            perfiles.forEach(perfil => {
-                const experiencia = perfil.getAttribute("data-experiencia");
-                const estudios = perfil.getAttribute("data-estudios");
-                const ubicacion = perfil.getAttribute("data-ubicacion").toLowerCase();
-
-                const experienciaFiltrar = experienciaSeleccionada === "todos" || experiencia === experienciaSeleccionada;
-                const estudiosFiltrar = estudiosSeleccionados === "todos" || estudios === estudiosSeleccionados;
-                const ubicacionFiltrar = ubicacion.includes(ubicacionFiltro);
-
-                if (experienciaFiltrar && estudiosFiltrar && ubicacionFiltrar) {
-                    perfil.style.display = "block";
-                } else {
-                    perfil.style.display = "none";
-                }
-            });
-        });
-    </script>
+    <a class="dropdown-item" href="index.html">Volver</a>
 </body>
 </html>

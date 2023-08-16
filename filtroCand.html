@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros de Candidatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .filtros {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        .candidato {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filtros de Candidatos</h1>
+
+    <div class="filtros">
+        <label for="estudios">Estudios:</label>
+        <select id="estudios">
+            <option value="todos">Todos</option>
+            <option value="tecnico">Tecnico</option>
+            <option value="tecnologo">Tecnologo</option>
+            <option value="universitaria">Universitaria</option>
+        </select>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" min="18" max="99" />
+
+        <label for="experiencia">Experiencia:</label>
+        <select id="experiencia">
+            <option value="todos">Todos</option>
+            <option value="novato">Novato</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="experimentado">Experimentado</option>
+        </select>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" />
+
+        <button id="btnFiltrar">Filtrar</button>
+    </div>
+
+    <div class="candidatos">
+        < <div class="candidato" data-estudios="universitaria" data-edad="25" data-experiencia="experimentado" data-ciudad="Bogotá">
+            <h2>Nombre: Juan Manuel Pérez pluralize</h2>
+            <p>Estudios: Universitaria</p>
+            <p>Edad: 25 años</p>
+            <p>Experiencia: Experimentado</p>
+            <p>Ciudad: Bogotá</p>
+        </div>
+        <div class="candidato" data-estudios="tecnico" data-edad="22" data-experiencia="novato" data-ciudad="Medellin">
+            <h2>Nombre: Laura Mendez</h2>
+            <p>Estudios: Tecnico</p>
+            <p>Edad: 22 años</p>
+            <p>Experiencia: Intermedio</p>
+            <p>Ciudad: Medellin</p>
+        </div>
+        <div class="candidato" data-estudios="tecnologo" data-edad="21" data-experiencia="intermedio" data-ciudad="Cali">
+            <h2>Nombre: Raul Paez Lopez</h2>
+            <p>Estudios: Tecnologo</p>
+            <p>Edad: 21 años</p>
+            <p>Experiencia: Experimentado</p>
+            <p>Ciudad: Cali</p>
+        </div>
+        <div class="candidato" data-estudios="universitaria" data-edad="24" data-experiencia="novato" data-ciudad="Bucaramanga">
+            <h2>Nombre: María López</h2>
+            <p>Estudios: Universitaria</p>
+            <p>Edad: 24 años</p>
+            <p>Experiencia: Novato</p>
+            <p>Ciudad: Bucaramanga</p>
+        </div>
+        <!-- Agregar más candidatos aquí -->
+    </div>
+
+    <script>
+        const btnFiltrar = document.getElementById("btnFiltrar");
+        const candidatos = document.querySelectorAll(".candidato");
+
+        btnFiltrar.addEventListener("click", () => {
+            const estudios = document.getElementById("estudios").value;
+            const edad = document.getElementById("edad").value;
+            const experiencia = document.getElementById("experiencia").value;
+            const ciudad = document.getElementById("ciudad").value;
+
+            candidatos.forEach(candidato => {
+                const candidatoEstudios = candidato.getAttribute("data-estudios");
+                const candidatoEdad = candidato.getAttribute("data-edad");
+                const candidatoExperiencia = candidato.getAttribute("data-experiencia");
+                const candidatoCiudad = candidato.getAttribute("data-ciudad");
+
+                const estudiosFiltro = estudios === "todos" || candidatoEstudios === estudios;
+                const edadFiltro = !edad || candidatoEdad >= edad;
+                const experienciaFiltro = experiencia === "todos" || candidatoExperiencia === experiencia;
+                const ciudadFiltro = !ciudad || candidatoCiudad.toLowerCase().includes(ciudad.toLowerCase());
+
+                candidato.style.display = estudiosFiltro && edadFiltro && experienciaFiltro && ciudadFiltro ? "block" : "none";
+            });
+        });
+    </script>
+    <a class="dropdown-item" href="index.html">Volver</a>
+</body>
+</html>
